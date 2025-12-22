@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repostería Artesanal</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#b08968;   /* café */
+      --secondary:#f6e7b4; /* amarillo suave */
+      --dark:#3f2e1e;
+    }
+
+    body{ scroll-behavior:smooth }
+
+    .hero{
+      background:url('https://loremflickr.com/1200/700/cake,bakery?lock=601') center/cover no-repeat;
+      position:relative;
+      color:white;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.45);
+    }
+
+    .hero .container{ position:relative; z-index:2 }
+
+    .btn-primary-custom{
+      background:var(--secondary);
+      color:#000;
+      font-weight:600;
+      border:none;
+    }
+
+    .btn-primary-custom:hover{
+      background:#facc15;
+      color:#000;
+    }
+
+    .wh-btn{
+      background:#25D366;
+      color:white;
+      font-weight:600;
+      border:none;
+    }
+
+    .wh-btn:hover{
+      background:#1ebe5d;
+      color:white;
+    }
+
+    .gallery-img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:8px;
+    }
+
+    /* Imagen pequeña para tarjetas de producto */
+    .product-img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+      border-radius:8px;
+      display:block;
+      margin-top:.75rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="bg-white shadow-sm sticky-top">
+  <div class="container py-3 d-flex justify-content-between align-items-center">
+    <h1 class="h5 mb-0 fw-semibold">Repostería</h1>
+    <a href="https://wa.me/56912345678" class="btn btn-sm wh-btn">
+      Pedir por WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero py-5">
+  <div class="container py-5 text-center">
+    <h2 class="fw-bold mb-3">
+      Repostería artesanal para tus momentos especiales
+    </h2>
+    <p class="lead mb-4">
+      Tortas, postres y productos horneados con recetas caseras.
+    </p>
+    <a href="#galeria" class="btn btn-primary-custom btn-lg me-2">
+      Ver productos
+    </a>
+    <a href="https://wa.me/56912345678" class="btn wh-btn btn-lg">
+      Hacer pedido
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h3 class="fw-bold text-center mb-4">Nuestros productos</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 p-4 shadow-sm">
+          <h5>Tortas por encargo</h5>
+          <p class="text-muted mb-0">Personalizadas para cumpleaños y eventos.</p>
+          <!-- Imagen ejemplo: reemplazar por foto real (editable) -->
+          <img src="https://loremflickr.com/800/600/cake?lock=511" class="product-img" alt="Torta artesanal">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 p-4 shadow-sm">
+          <h5>Postres artesanales</h5>
+          <p class="text-muted mb-0">Variedad de sabores y recetas caseras.</p>
+          <!-- Imagen ejemplo: reemplazar por foto real (editable) -->
+          <img src="https://loremflickr.com/800/600/pastry?lock=512" class="product-img" alt="Postres artesanales">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 p-4 shadow-sm">
+          <h5>Pan y pastelería</h5>
+          <p class="text-muted mb-0">Horneado fresco todos los días.</p>
+          <!-- Imagen ejemplo: reemplazar por foto real (editable) -->
+          <img src="https://haypanypasteles.cl/img/imagenes/36/HayPan-BajaR-OliverHerreraFotografia-45.jpg" class="product-img" alt="Pan artesanal">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria" class="py-5">
+  <div class="container">
+    <h3 class="fw-bold mb-3">Galería</h3>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <img src="https://img.freepik.com/foto-gratis/mujer-tiro-medio-preparando-postre_23-2148972040.jpg?semt=ais_hybrid&w=740&q=80" class="gallery-img">
+      </div>
+      <div class="col-md-4">
+        <img src="https://us.123rf.com/450wm/henadzipechan/henadzipechan2010/henadzipechan201000052/183012641-la-chef-pastelera-hace-un-pastel-con-bayas-frescas-y-crema-producci%C3%B3n-en-masa-de-tortas-y-dulces.jpg?ver=6" class="gallery-img">
+      </div>
+      <div class="col-md-4">
+        <img src="https://estudiarcocina.com/wp-content/uploads/2023/09/Reglamento-interno-de-trabajo-en-una-panaderia.jpg" class="gallery-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="py-4 bg-light">
+  <div class="container text-center">
+    <p class="mb-1">📍 Dirección: Calle Ejemplo 123</p>
+    <p class="mb-0">🕒 Horario: Lun–Vie 08:00–18:00 / Sáb 08:00–14:00</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h4 class="fw-bold mb-3">¿Hacemos tu pedido?</h4>
+    <a href="https://wa.me/56912345678" class="btn wh-btn btn-lg">
+      Pedir por WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer class="py-3 text-center small bg-white border-top">
+  © 2025 Repostería
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

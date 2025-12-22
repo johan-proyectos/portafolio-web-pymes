@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plantilla 3 - Servicios Profesionales</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f2a44;
+      /* azul oscuro */
+      --accent: #6b7280;
+      /* gris */
+      --bg: #f8fafc;
+      --muted: #6b7280;
+    }
+
+    body {
+      scroll-behavior: smooth;
+    }
+
+    .btn-hero-outline {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      font-weight: 600;
+      background: transparent;
+    }
+
+    .btn-hero-outline:hover {
+      background: #ffffff;
+      color: var(--primary);
+    }
+
+    .hero-centered {
+      background:
+        linear-gradient(rgba(15, 42, 68, .85), rgba(15, 42, 68, .85)),
+        url('https://loremflickr.com/1200/700/technician,repair?lock=700');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+
+    .btn-primary-custom {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-primary-custom:hover {
+      filter: brightness(.9)
+    }
+
+    .wa {
+      /* WhatsApp */
+      background: #25D366;
+      color: white;
+      font-weight: 600;
+      border: none;
+    }
+
+    .wa:hover {
+      background: #1ebe5d
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <!-- EDITABLE: nombre del negocio -->
+      <a class="navbar-brand fw-semibold" href="#">Servicio Técnico</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#servicios">Servicios</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-sm btn-primary-custom" href="#contacto">Cotizar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-centered text-center">
+    <div class="container">
+      <h1 class="fw-bold mb-3">Servicio técnico confiable y rápido</h1>
+      <p class="lead mb-4">Reparaciones, mantenimiento y soporte técnico para equipos e instalaciones.
+      </p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#servicios" class="btn btn-hero-outline btn-lg">Ver servicios</a>
+        <a href="https://wa.me/56912345678?text=Hola%20necesito%20un%20servicio%20t%C3%A9cnico"
+          class="btn wa btn-lg">Contactar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-5">
+    <div class="container">
+      <h3 class="fw-bold mb-4 text-center">Nuestros Servicios</h3>
+
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <h5 class="fw-semibold">Qué ofrecemos</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <strong>Reparación de electrodomésticos:</strong> diagnóstico y reparación en sitio.
+            </li>
+            <li class="mb-2">
+              <strong>Mantenimiento preventivo:</strong> mantenimientos programados para equipos.
+            </li>
+            <li class="mb-2">
+              <strong>Sistemas eléctricos y electrónicos:</strong> instalación y reparación segura.
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="fw-semibold">Cómo trabajamos</h5>
+          <p class="text-muted">
+            Evaluamos tu necesidad, proponemos una solución clara y entregamos una
+            cotización personalizada según el tipo de proyecto.
+          </p>
+          <p class="text-muted mb-0">
+            Atención directa, sin intermediarios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONA DE ATENCIÓN -->
+  <section class="py-4 bg-white">
+    <div class="container">
+      <h5 class="fw-semibold mb-2">Zona de atención</h5>
+      <p class="small text-muted mb-0">Ej: Ciudad A, Ciudad B, comunas cercanas — editar según cobertura</p>
+    </div>
+  </section>
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h3 class="fw-bold text-center mb-4">¿Por qué elegirnos?</h3>
+      <div class="row text-center g-4">
+        <div class="col-md-4">
+          <h5>✔ Atención rápida</h5>
+          <p class="text-muted small">Respuesta directa y sin intermediarios.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>✔ Experiencia</h5>
+          <p class="text-muted small">Años de trabajo en reparaciones y soporte técnico.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>✔ Garantía</h5>
+          <p class="text-muted small">Trabajos respaldados y cotización clara.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h3 class="fw-bold mb-3">Galería</h3>
+      <p class="text-muted small mb-4">
+        Ejemplos de trabajos y rubros atendidos. Las imágenes se reemplazan por fotos reales del negocio.
+      </p>
+
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <img src="https://loremflickr.com/400/300/repair?lock=601" class="gallery-img" alt="Reparación en sitio">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://loremflickr.com/400/300/technician?lock=602" class="gallery-img" alt="Técnico en terreno">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://loremflickr.com/400/300/electronics?lock=603" class="gallery-img" alt="Equipo reparado">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="https://loremflickr.com/400/300/workshop?lock=604" class="gallery-img" alt="Taller">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-5 text-center">
+    <div class="container">
+      <h4 class="fw-bold mb-3">Solicita servicio</h4>
+      <p class="mb-3 small text-muted">Describe tu problema por WhatsApp y te respondemos pronto.
+
+      </p>
+      <a href="https://wa.me/56912345678?text=Hola%20necesito%20un%20servicio%20t%C3%A9cnico"
+        class="btn wa btn-lg">Contactar por WhatsApp</a>
+      <p class="small text-muted mt-3 mb-0">Horario: Lun - Vie 9:00 - 18:00 • Zona: Ciudad / comunas
+        </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-3 text-center small bg-white border-top">
+    <div class="container">
+      © 2025 Servicio Técnico  — Teléfono 
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
