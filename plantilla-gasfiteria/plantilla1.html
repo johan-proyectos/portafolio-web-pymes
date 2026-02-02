@@ -102,10 +102,59 @@
       background: #1ebe5d;
       color: white;
     }
+
+    /* SECCIÓN DE CONTACTO MEJORADA */
+    .category-btn {
+      padding: 0.75rem 1.2rem;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .category-btn:hover {
+      border-color: #0b4f8a;
+      color: #0b4f8a;
+    }
+
+    .category-btn.active {
+      background: #0b4f8a;
+      color: white;
+      border-color: #0b4f8a;
+    }
+
+    .message-box {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      background: #f9f9f9;
+      margin: 1rem 0;
+    }
+
+    .message-preview {
+      background: white;
+      border: 1px solid #eaeaea;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1rem 0;
+      min-height: 80px;
+      max-height: 150px;
+      overflow-y: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+
   </style>
 </head>
 
-<a href="https://wa.me/56912345678?text=Hola%20quiero%20cotizar%20un%20servicio"
+<a href="https://wa.me/56927905271?text=Hola%20quiero%20cotizar%20un%20servicio"
   class="whatsapp-float" target="_blank" aria-label="WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
@@ -124,7 +173,7 @@
           <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="#galeria">Trabajos</a></li>
           <li class="nav-item">
-            <a class="btn btn-sm btn-whatsapp" href="https://wa.me/56912345678">WhatsApp</a>
+            <a class="btn btn-sm btn-whatsapp" href="https://wa.me/56927905271">WhatsApp</a>
           </li>
         </ul>
       </div>
@@ -140,7 +189,7 @@
           <p class="lead opacity-75">
             Reparaciones, instalaciones, emergencias y soluciones confiables para hogares y negocios.
           </p>
-          <a href="https://wa.me/56912345678" class="btn btn-warning btn-lg me-2 shadow-sm">
+          <a href="https://wa.me/56927905271" class="btn btn-warning btn-lg me-2 shadow-sm">
             Cotizar por WhatsApp
           </a>
           <a href="#servicios" class="btn btn-outline-light btn-lg shadow-sm">
@@ -237,13 +286,63 @@
   </section>
 
   <!-- CONTACTO -->
-  <section class="py-5 text-center">
+  <section class="py-5 text-center bg-white">
     <div class="container">
-      <h3 class="fw-bold">¿Necesitas ayuda ahora?</h3>
-      <p class="mb-3">Escríbenos por WhatsApp para atención inmediata.</p>
-      <a href="https://wa.me/56912345678" class="btn btn-whatsapp btn-lg">
-        Contactar por WhatsApp
-      </a>
+      <h3 class="fw-bold mb-4">¿Necesitas ayuda ahora?</h3>
+      <p class="mb-4 text-muted">Selecciona una categoría y personaliza tu mensaje para WhatsApp</p>
+      
+      <!-- CATEGORÍAS -->
+      <div class="mb-4">
+        <h5 class="fw-semibold mb-3 text-start">Tipo de servicio:</h5>
+        <div class="row g-2">
+          <div class="col-6 col-md-3">
+            <button class="category-btn w-100" onclick="selectCategory(this, 'Fuga de agua')">
+              💧 Fuga
+            </button>
+          </div>
+          <div class="col-6 col-md-3">
+            <button class="category-btn w-100" onclick="selectCategory(this, 'Problema de tuberías')">
+              🔧 Tuberías
+            </button>
+          </div>
+          <div class="col-6 col-md-3">
+            <button class="category-btn w-100" onclick="selectCategory(this, 'Instalación de gas')">
+              🔥 Gas
+            </button>
+          </div>
+          <div class="col-6 col-md-3">
+            <button class="category-btn w-100" onclick="selectCategory(this, 'Emergencia')">
+              ⚠️ Emergencia
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENSAJE PERSONALIZADO -->
+      <div class="message-box text-start">
+        <label for="customMessage" class="form-label fw-semibold">Tu mensaje (opcional):</label>
+        <textarea id="customMessage" class="form-control" rows="3" 
+          placeholder="Escribe aquí detalles específicos de tu problema..." 
+          onkeyup="updatePreview()"></textarea>
+        <small class="text-muted d-block mt-2">
+          Máximo 500 caracteres. Este se añadirá a tu mensaje de contacto.
+        </small>
+      </div>
+
+      <!-- VISTA PREVIA -->
+      <div class="text-start">
+        <h6 class="fw-semibold mb-2">Mensaje a enviar:</h6>
+        <div class="message-preview" id="messagePreview">
+          Selecciona una categoría para ver tu mensaje
+        </div>
+      </div>
+
+      <!-- BOTONES -->
+      <div class="mt-4 text-center">
+        <a id="whatsappLink" class="btn btn-whatsapp btn-lg" target="_blank">
+          Enviar mensaje por WhatsApp
+        </a>
+      </div>
     </div>
   </section>
 
@@ -252,6 +351,47 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
-</html>
+  <script>
+    let selectedCategory = '';
+
+    function selectCategory(btn, category) {
+      // Remover clase active de todos los botones
+      document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+      
+      // Añadir clase active al botón clickeado
+      btn.classList.add('active');
+      selectedCategory = category;
+      
+      // Actualizar vista previa
+      updatePreview();
+    }
+
+    function updatePreview() {
+      const customMessage = document.getElementById('customMessage').value;
+      const preview = document.getElementById('messagePreview');
+      const whatsappLink = document.getElementById('whatsappLink');
+      
+      if (!selectedCategory) {
+        preview.textContent = 'Selecciona una categoría para ver tu mensaje';
+        whatsappLink.href = '#';
+        whatsappLink.style.pointerEvents = 'none';
+        whatsappLink.style.opacity = '0.5';
+        return;
+      }
+
+      let fullMessage = `Hola, necesito ayuda con: ${selectedCategory}`;
+      
+      if (customMessage.trim()) {
+        fullMessage += `\n\nDetalles: ${customMessage}`;
+      }
+
+      preview.textContent = fullMessage;
+      
+      // Actualizar enlace de WhatsApp con el mensaje
+      const encodedMessage = encodeURIComponent(fullMessage);
+      whatsappLink.href = `https://wa.me/56927905271?text=${encodedMessage}`;
+      whatsappLink.style.pointerEvents = 'auto';
+      whatsappLink.style.opacity = '1';
+    }
+  </script>
