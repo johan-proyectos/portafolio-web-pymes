@@ -9,6 +9,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Tipografía moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #0b4f8a;
@@ -17,30 +20,40 @@
 
     body {
       color: #222;
+      font-family: 'Inter', sans-serif;
+      background-color: #fafafa;
     }
 
+    /* HERO MÁS PROFESIONAL */
     .hero {
       background: url('https://cdn.create.vista.com/api/media/medium/204693950/stock-photo-partial-view-worker-holding-tools-wrenches-hand?token=') center/cover no-repeat;
       color: white;
       position: relative;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      overflow: hidden;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(3, 37, 76, .55);
+      background: rgba(8, 26, 49, .65);
     }
 
     .hero .container {
       position: relative;
-      z-index: 2
+      z-index: 2;
     }
 
+    /* BOTÓN WHATSAPP */
     .btn-whatsapp {
       background: #25D366;
       color: white;
       font-weight: 600;
+      border-radius: 10px;
+      padding: 0.65rem 1.3rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
     }
 
     .btn-whatsapp:hover {
@@ -48,32 +61,40 @@
       color: white;
     }
 
+    /* TARJETAS MÁS LIMPIAS */
+    .card-service, .gallery-img, .info-box {
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .04);
+      border: 1px solid #eaeaea;
+    }
+
     .gallery-img {
       width: 100%;
-      height: 220px;
+      height: 230px;
       object-fit: cover;
-      border-radius: 6px;
     }
 
     .service-icon {
-      font-size: 2rem
+      font-size: 2.2rem;
+      margin-bottom: .5rem;
     }
 
+    /* WHATSAPP FLOTANTE */
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 22px;
+      right: 22px;
       background: #25D366;
       color: white;
       width: 60px;
       height: 60px;
-      border-radius: 50%;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 30px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .25);
       z-index: 999;
     }
 
@@ -84,17 +105,15 @@
   </style>
 </head>
 
-<a href="https://wa.me/56912345678?text=Hola%20quiero%20cotizar%20un%20servicio" class="whatsapp-float" target="_blank"
-  aria-label="WhatsApp">
+<a href="https://wa.me/56912345678?text=Hola%20quiero%20cotizar%20un%20servicio"
+  class="whatsapp-float" target="_blank" aria-label="WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
-
 </a>
-
 
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100">
+  <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="z-index:100;">
     <div class="container">
       <a class="navbar-brand fw-semibold" href="#">Nombre del Negocio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -105,9 +124,7 @@
           <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="#galeria">Trabajos</a></li>
           <li class="nav-item">
-            <a class="btn btn-sm btn-whatsapp" href="https://wa.me/56912345678">
-              WhatsApp
-            </a>
+            <a class="btn btn-sm btn-whatsapp" href="https://wa.me/56912345678">WhatsApp</a>
           </li>
         </ul>
       </div>
@@ -119,17 +136,14 @@
     <div class="container py-5">
       <div class="row">
         <div class="col-md-7">
-          <h1 class="display-5 fw-bold">
-            Servicios de Gasfitería Profesional
-          </h1>
-          <p class="lead">
-            Atención rápida en domicilios y negocios. Reparaciones, instalaciones y emergencias.
-            Soluciones confiables en agua y gas. Presupuesto claro y contacto directo por WhatsApp.
+          <h1 class="display-5 fw-bold">Servicios de Gasfitería Profesional</h1>
+          <p class="lead opacity-75">
+            Reparaciones, instalaciones, emergencias y soluciones confiables para hogares y negocios.
           </p>
-          <a href="https://wa.me/56912345678" class="btn btn-warning btn-lg me-2">
-            Cotizar por WhatsApp ahora
+          <a href="https://wa.me/56912345678" class="btn btn-warning btn-lg me-2 shadow-sm">
+            Cotizar por WhatsApp
           </a>
-          <a href="#servicios" class="btn btn-outline-light btn-lg">
+          <a href="#servicios" class="btn btn-outline-light btn-lg shadow-sm">
             Ver servicios
           </a>
         </div>
@@ -143,68 +157,59 @@
       <h2 class="mb-4 fw-bold">Nuestros Servicios</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="p-4 border rounded h-100">
-            <div class="service-icon mb-2">🔧</div>
-            <h5>Servicios de gasfitería</h5>
-            <p class="text-muted mb-0">Trabajos bien hechos, sin improvisaciones y con materiales de calidad.</p>
+          <div class="p-4 card-service h-100 bg-white">
+            <div class="service-icon">🔧</div>
+            <h5 class="fw-semibold">Servicios de gasfitería</h5>
+            <p class="text-muted mb-0">Reparaciones seguras, limpias y con materiales de calidad.</p>
           </div>
         </div>
+
         <div class="col-md-4">
-          <div class="p-4 border rounded h-100">
-            <div class="service-icon mb-2">💧</div>
-            <h5>Reparación de filtraciones</h5>
-            <p class="text-muted mb-0">Detección y reparación de fugas de agua, llaves, cañerías y descargas.</p>
+          <div class="p-4 card-service h-100 bg-white">
+            <div class="service-icon">💧</div>
+            <h5 class="fw-semibold">Reparación de filtraciones</h5>
+            <p class="text-muted mb-0">Detección y reparación de fugas en cañerías, llaves y descargas.</p>
           </div>
         </div>
+
         <div class="col-md-4">
-          <div class="p-4 border rounded h-100">
-            <div class="service-icon mb-2">🔥</div>
-            <h5>Gas y calefacción</h5>
-            <p class="text-muted mb-0">Instalación y mantención de sistemas de gas y calefacción, trabajo seguro y
-              responsable.</p>
+          <div class="p-4 card-service h-100 bg-white">
+            <div class="service-icon">🔥</div>
+            <h5 class="fw-semibold">Gas y calefacción</h5>
+            <p class="text-muted mb-0">Instalación y mantención de sistemas de gas, trabajo seguro.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN CONFIANZA -->
+  <!-- CONFIANZA -->
   <section id="confianza" class="py-5 bg-light">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="fw-bold mb-3">Trabajo honesto y de confianza</h2>
-          <p class="text-muted mb-4">
-            Sabemos que llamar a un técnico no es solo por el trabajo, también es confiar en la persona
-            que entra a tu casa. Por eso trabajamos de forma clara, responsable y sin sorpresas.
-          </p>
-        </div>
-      </div>
+      <h2 class="fw-bold mb-4 text-center">Trabajo honesto y de confianza</h2>
 
-      <div class="row g-4 mt-2">
+      <div class="row g-4">
         <div class="col-md-6">
-          <div class="p-4 border rounded h-100 bg-white">
-            <h5 class="mb-3">¿Qué puedes esperar?</h5>
+          <div class="p-4 info-box bg-white h-100">
+            <h5 class="mb-3 fw-semibold">¿Qué puedes esperar?</h5>
             <ul class="list-unstyled mb-0">
-              <li class="mb-2">✅ Llegamos en el horario acordado</li>
-              <li class="mb-2">✅ Explicamos el problema antes de reparar</li>
-              <li class="mb-2">✅ Presupuesto claro, sin cobros sorpresa</li>
-              <li class="mb-2">✅ Trabajo limpio y ordenado</li>
-              <li class="mb-2">✅ Trato directo, sin intermediarios</li>
+              <li>✅ Puntualidad</li>
+              <li>✅ Explicación clara del problema</li>
+              <li>✅ Sin cobros sorpresa</li>
+              <li>✅ Trabajo limpio</li>
+              <li>✅ Trato directo</li>
             </ul>
           </div>
         </div>
 
         <div class="col-md-6">
-          <div class="p-4 border rounded h-100 bg-white">
-            <h5 class="mb-3">Experiencia local</h5>
+          <div class="p-4 info-box bg-white h-100">
+            <h5 class="mb-3 fw-semibold">Experiencia local</h5>
             <p class="mb-2">
-              Más de <strong>10 años trabajando en domicilios y negocios</strong> de la zona,
-              resolviendo problemas reales del día a día.
+              Más de <strong>10 años ayudando a hogares y negocios</strong> con soluciones reales.
             </p>
-            <p class="mb-0 text-muted">
-              Nuestro objetivo es simple: que quedes tranquilo y que si necesitas ayuda otra vez,
-              nos vuelvas a llamar.
+            <p class="text-muted mb-0">
+              Buscamos que quedes tranquilo y que si necesitas ayuda otra vez, nos vuelvas a llamar.
             </p>
           </div>
         </div>
@@ -212,12 +217,10 @@
     </div>
   </section>
 
-
   <!-- GALERÍA -->
   <section id="galeria" class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4 fw-bold">Algunos trabajos realizados</h2>
-      <p class="mb-4 text-muted">Estos son algunos de los trabajos que hemos realizado para nuestros clientes.</p>
       <div class="row g-3">
         <div class="col-md-4">
           <img src="https://novohogar.cl/wp-content/uploads/2019/09/gasfiteria-1.jpg" class="gallery-img">
@@ -237,7 +240,7 @@
   <section class="py-5 text-center">
     <div class="container">
       <h3 class="fw-bold">¿Necesitas ayuda ahora?</h3>
-      <p class="mb-3">Escríbenos directamente por WhatsApp.</p>
+      <p class="mb-3">Escríbenos por WhatsApp para atención inmediata.</p>
       <a href="https://wa.me/56912345678" class="btn btn-whatsapp btn-lg">
         Contactar por WhatsApp
       </a>
